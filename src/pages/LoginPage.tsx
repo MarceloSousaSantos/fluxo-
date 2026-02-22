@@ -38,8 +38,8 @@ export function LoginPage() {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-500 mb-4">
             <Heart size={32} fill="currentColor" />
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-white">Nosso Dinheiro</h1>
-          <p className="text-zinc-500">Controle financeiro para casais modernos</p>
+          <h1 className="text-3xl font-bold tracking-tight text-white">Fluxo+</h1>
+          <p className="text-zinc-500">Seu dinheiro, sob controle!</p>
         </div>
 
         <div className="flex p-1 bg-zinc-900 rounded-xl border border-white/5">
