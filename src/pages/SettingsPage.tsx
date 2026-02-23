@@ -163,9 +163,9 @@ export function SettingsPage() {
                 <button
                   onClick={handleJoinCouple}
                   disabled={loading}
-                  className="px-4 bg-emerald-500 text-emerald-950 rounded-xl font-bold text-xs uppercase tracking-widest active:scale-95 transition-transform disabled:opacity-50"
+                  className="btn-primary btn-sm"
                 >
-                  Entrar
+                  <span className="btn-inner uppercase tracking-widest text-xs">Entrar</span>
                 </button>
               </div>
             </div>
@@ -232,9 +232,9 @@ export function SettingsPage() {
               />
               <button
                 onClick={addCategory}
-                className="w-10 h-10 bg-emerald-500 text-emerald-950 rounded-xl flex items-center justify-center active:scale-95 transition-transform"
+                className="btn-primary btn-icon"
               >
-                <Plus size={20} />
+                <span className="btn-inner"><Plus size={18} /></span>
               </button>
             </div>
 

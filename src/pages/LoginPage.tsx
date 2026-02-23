@@ -154,9 +154,11 @@ export function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-emerald-950 font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 mt-4"
+            className="btn-primary btn-full mt-4"
           >
-            {loading ? <Loader2 className="animate-spin" size={20} /> : (isLogin ? 'Entrar no Painel' : 'Criar Minha Conta')}
+            <span className="btn-inner py-4 text-base">
+              {loading ? <Loader2 className="animate-spin" size={20} /> : (isLogin ? 'Entrar no Painel' : 'Criar Minha Conta')}
+            </span>
           </button>
         </form>
 

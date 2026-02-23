@@ -119,9 +119,9 @@ export function TransactionsPage() {
         <h2 className="text-2xl font-bold text-white">Transações</h2>
         <button
           onClick={() => { resetForm(); setIsModalOpen(true); }}
-          className="w-10 h-10 rounded-xl bg-emerald-500 text-emerald-950 flex items-center justify-center active:scale-90 transition-transform"
+          className="btn-primary btn-icon"
         >
-          <Plus size={24} />
+          <span className="btn-inner"><Plus size={20} /></span>
         </button>
       </div>
 
@@ -349,9 +349,11 @@ export function TransactionsPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 text-emerald-950 font-bold py-5 rounded-2xl transition-all flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/10"
+                  className="btn-primary btn-full"
                 >
-                  {loading ? <Loader2 className="animate-spin" size={20} /> : (editingTransaction ? 'Salvar Alterações' : 'Confirmar Transação')}
+                  <span className="btn-inner py-4 text-base">
+                    {loading ? <Loader2 className="animate-spin" size={20} /> : (editingTransaction ? 'Salvar Alterações' : 'Confirmar Transação')}
+                  </span>
                 </button>
               </form>
             </motion.div>

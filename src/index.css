@@ -18,8 +18,10 @@
 
   /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 }
 
@@ -27,10 +29,15 @@
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* ── FAB animated border ─────────────────────────────────── */
+/* ── Shared gradient animation ───────────────────────────── */
 @keyframes spin-gradient {
-  from { --angle: 0deg; }
-  to   { --angle: 360deg; }
+  from {
+    --angle: 0deg;
+  }
+
+  to {
+    --angle: 360deg;
+  }
 }
 
 @property --angle {
@@ -39,6 +46,7 @@
   inherits: false;
 }
 
+/* ── FAB (botão flutuante circular) ──────────────────────── */
 .fab-animated {
   position: fixed;
   bottom: 6rem;
@@ -47,18 +55,17 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 1.125rem;
-  padding: 2px;                         /* espaço para a borda */
-  background: conic-gradient(
-    from var(--angle),
-    #4285f4, #34a853, #fbbc05, #ea4335, #a855f7, #4285f4
-  );
+  padding: 2px;
+  background: conic-gradient(from var(--angle),
+      #4285f4, #34a853, #fbbc05, #ea4335, #a855f7, #4285f4);
   animation: spin-gradient 3s linear infinite;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.15s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 24px 4px rgba(66, 133, 244, 0.25),
-              0 0 40px 8px rgba(52, 168, 83, 0.15);
+    0 0 40px 8px rgba(52, 168, 83, 0.15);
+  text-decoration: none;
 }
 
 .fab-animated:active {
@@ -67,14 +74,14 @@
 
 .fab-animated:hover {
   box-shadow: 0 0 32px 8px rgba(66, 133, 244, 0.35),
-              0 0 56px 14px rgba(52, 168, 83, 0.2);
+    0 0 56px 14px rgba(52, 168, 83, 0.2);
 }
 
 .fab-inner {
   width: 100%;
   height: 100%;
-  border-radius: 1rem;         /* ligeiramente menor que o wrapper */
-  background: #18181b;         /* zinc-900 */
+  border-radius: 1rem;
+  background: #18181b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,6 +90,101 @@
 }
 
 .fab-animated:hover .fab-inner {
-  background: #27272a;         /* zinc-800 ao hover */
+  background: #27272a;
 }
 
+/* ── btn-primary (botão inline com borda animada) ────────── */
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 0.875rem;
+  padding: 2px;
+  /* a "borda" animada */
+  background: conic-gradient(from var(--angle),
+      #4285f4, #34a853, #fbbc05, #ea4335, #a855f7, #4285f4);
+  animation: spin-gradient 3s linear infinite;
+  transition: box-shadow 0.3s ease, transform 0.15s ease, opacity 0.2s;
+  box-shadow: 0 0 18px 2px rgba(66, 133, 244, 0.2),
+    0 0 32px 6px rgba(52, 168, 83, 0.1);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  animation-play-state: paused;
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn-primary:hover:not(:disabled) {
+  box-shadow: 0 0 28px 6px rgba(66, 133, 244, 0.3),
+    0 0 48px 10px rgba(52, 168, 83, 0.18);
+}
+
+/* Camada interna escura */
+.btn-primary>.btn-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  border-radius: 0.75rem;
+  background: #18181b;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: background 0.2s;
+  white-space: nowrap;
+  pointer-events: none;
+  /* o clique vai para .btn-primary */
+}
+
+.btn-primary:hover:not(:disabled)>.btn-inner {
+  background: #27272a;
+}
+
+/* Tamanhos */
+.btn-primary.btn-sm>.btn-inner {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+
+.btn-primary.btn-md>.btn-inner {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.btn-primary.btn-lg>.btn-inner {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+}
+
+.btn-primary.btn-full {
+  width: 100%;
+  border-radius: 0.875rem;
+}
+
+.btn-primary.btn-full>.btn-inner {
+  justify-content: center;
+}
+
+/* Ícone quadrado */
+.btn-primary.btn-icon {
+  border-radius: 0.875rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.btn-primary.btn-icon>.btn-inner {
+  border-radius: 0.75rem;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
