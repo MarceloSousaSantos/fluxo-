@@ -153,12 +153,11 @@ export function DashboardPage() {
         </div>
       </div>
 
-      {/* Floating Action Button */}
-      <Link
-        to="/transacoes?new=true"
-        className="fixed bottom-24 right-6 w-14 h-14 bg-emerald-500 text-emerald-950 rounded-2xl shadow-xl shadow-emerald-500/20 flex items-center justify-center active:scale-90 transition-transform z-40"
-      >
-        <Plus size={32} strokeWidth={3} />
+      {/* Floating Action Button – animated Google-style border */}
+      <Link to="/transacoes?new=true" className="fab-animated">
+        <span className="fab-inner">
+          <Plus size={26} strokeWidth={2.5} />
+        </span>
       </Link>
     </div>
   );
