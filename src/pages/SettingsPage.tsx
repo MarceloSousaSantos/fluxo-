@@ -428,8 +428,8 @@ export function SettingsPage() {
 
       {/* Rodapé com informações do app */}
       <div className="text-center space-y-1">
-        <p className="text-[10px] text-zinc-600 font-bold uppercase tracking-[0.2em]">Controle Financeiro Casal</p>
-        <p className="text-[10px] text-zinc-700">Versão 1.0.0 • Mock Mode</p>
+        <p className="text-[10px] text-zinc-600 font-bold uppercase tracking-[0.2em]">Fluxo++ — Controle financeiro inteligente</p>
+        <p className="text-[10px] text-zinc-700">Versão 1.0.0</p>
       </div>
     </div>
   );
