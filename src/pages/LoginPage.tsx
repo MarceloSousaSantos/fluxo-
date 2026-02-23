@@ -89,10 +89,6 @@ export function LoginPage() {
             <div className="login-spinner" />
             {/* Disco escuro que cria o efeito de profundidade */}
             <div className="login-spinner-inner" />
-            {/* Ícone de coração centralizado sobre o spinner */}
-            <div className="absolute inset-0 flex items-center justify-center z-10">
-              <Heart size={28} fill="white" className="text-white drop-shadow-lg" />
-            </div>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white">Fluxo++</h1>
           <p className="text-zinc-500">Seu dinheiro, sob controle!</p>
