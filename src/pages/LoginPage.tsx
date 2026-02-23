@@ -81,11 +81,18 @@ export function LoginPage() {
     <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-sm space-y-8"> {/* Container máximo de 384px com espaçamento */}
 
-        {/* Cabeçalho com logo e tagline */}
+        {/* Cabeçalho com logo animado e tagline */}
         <div className="text-center space-y-2">
-          {/* Ícone do coração — logo do aplicativo */}
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-500 mb-4">
-            <Heart size={32} fill="currentColor" /> {/* fill = preenchido (não só contorno) */}
+          {/* Spinner animado: gradiente roxo/ciano girando com aura colorida */}
+          <div className="relative w-[90px] h-[90px] mx-auto mb-6">
+            {/* Camada do gradiente girando */}
+            <div className="login-spinner" />
+            {/* Disco escuro que cria o efeito de profundidade */}
+            <div className="login-spinner-inner" />
+            {/* Ícone de coração centralizado sobre o spinner */}
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              <Heart size={28} fill="white" className="text-white drop-shadow-lg" />
+            </div>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white">Fluxo++</h1>
           <p className="text-zinc-500">Seu dinheiro, sob controle!</p>
